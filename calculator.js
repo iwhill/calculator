@@ -1,5 +1,5 @@
 function add (a, b) {
-  return a + b;
+  return parseInt(a) + parseInt(b);
 }
 
 function subtract(a, b) {
@@ -14,29 +14,18 @@ function divide(a, b) {
   return a / b;
 }
 
-function operate(obj) {
+function operate(a, b, operator) {
   let result;
-  const a = obj.firstOperand;
-  const b = obj.secondOperand;
-  const operation = obj.operator
 
-  if (a !== undefined && b !== undefined) {
-    if (operation === "add") {
-      result = add(a, b);
-    } else if (operation === "subtract") {
-      result = subtract(a, b);
-    } else if (operation === "multiply") {
-      result = multiply(a, b);
-    } else if (operation === "divide") {
-      result = divide(a, b);
-    }
+  if (operator === "add") {
+    result = add(a, b);
+  } else if (operator ==="subtract") {
+    result = subtract(a, b);
+  } else if (operator === "multiply") {
+    result = multiply(a, b);
+  } else if (operator === "divide") {
+    result = divide(a, b)
   }
 
   return result;
-}
-
-let expression = {
-  firstOperand: 5,
-  secondOperand: 3,
-  operator: "multiply"
 }
